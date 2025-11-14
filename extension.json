@@ -1,0 +1,47 @@
+{
+    "identifier": "net.marquiskurt.pdkit-tasks",
+    "name": "PlaydateKit Tasks",
+    "organization": "Marquis Kurt",
+    "description": "Build and run apps and games for Playdate via PlaydateKit.",
+    "license": "MIT",
+    "repository": "https://source.marquiskurt.net/PDUniverse/pdkit-tasks",
+    "bugs": "https://youtrack.marquiskurt.net/youtrack/issues/PDKR",
+    "version": "0.1",
+    "categories": ["tasks"],
+    "main": "main.js",
+    "activationEvents": ["onWorkspaceContains:extension.json"],
+    "taskTemplates": {
+        "pdcBuild": {
+            "name": "Build PlaydateKit Package",
+            "image": "logo",
+            "tasks": {
+                "build": {
+                    "resolve": "pdkr-tasks"
+                },
+                "clean": {
+                    "resolve": "pdkr-tasks"
+                }
+            },
+            "config": "Configurations/PackageTask.json",
+            "description": "Build a PlaydateKit based game."
+        },
+        "pdcSimulator": {
+            "name": "Playdate Simulator (PlaydateKit)",
+            "image": "logo",
+            "tasks": {
+                "build": {
+                    "resolve": "pdkr-tasks"
+                },
+                "run": {
+                    "resolve": "pdkr-tasks",
+                },
+                "clean": {
+                    "resolve": "pdkr-tasks"
+                }
+            },
+            "buildBeforeRunning": true,
+            "config": "Configurations/SimulatorTask.json",
+            "description": "Run a PlaydateKit based game in the Playdate Simulator."
+        }
+    }
+}

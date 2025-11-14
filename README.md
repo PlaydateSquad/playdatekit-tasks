@@ -1,0 +1,39 @@
+**PlaydateKit Tasks** provides Task integration with **PlaydateKit**, allowing you to quickly build and run apps and games for the Playdate console with PlaydateKit.
+
+> **⚠️ Important**  
+> This is not an official extension developed and/or endorsed by Panic; It is a community-developed project.
+
+> **Note**  
+> If you are looking for tools to assist with developing apps and games for the Playdate with either Lua or C, you'll want Panic's official extension instead, which you can find below.
+>
+> [Install Playdate extension &rsaquo;](nova://extension/?id=com.panic.Playdate&name=Playdate)
+
+PlaydateKit Tasks provides tasks for:
+
+- Building projects as a universal package (simulator + device), a simulator-only build, and/or a device-only build;
+- Running projects through the Playdate Simulator
+- Cleaning build folders
+
+## Requirements
+
+PlaydateKit Tasks requires some additional tools to be installed on your Mac:
+
+- [Playdate SDK](https://play.date/dev)  
+- Swift toolchain v6.2 or later
+
+You might also want to install these extensions, although they are not required for PlaydateKit Tasks to function:
+
+- [Icarus](nova://extension/?id=panic.Icarus&name=Icarus)
+
+## Usage
+
+To run PlaydateKit Tasks's _Build_ action, add either **Build Playdate Package** or **Playdate Simulator (PlaydateKit)** to your tasks and then do any of the following:
+
+- Click the **Build** 🔨 button in the project toolbar;
+- Select the **Project → Build** menu item;
+- Press **Command-B**; or
+- Open the command palette and type `build`
+
+### Configuration
+
+You can adjust the settings for these tasks in your workspace's settings by opening the Task dropdown and selecting **Edit Task...**.

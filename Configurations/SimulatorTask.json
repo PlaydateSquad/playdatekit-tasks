@@ -1,0 +1,49 @@
+[
+    {
+        "key": "product-name",
+        "title": "Product Name",
+        "type": "string",
+        "description": "The name of the product being built. Defaults to the name of the workspace.",
+        "placeholder": "Automatic",
+        "default": ""
+    },
+    {
+        "key": "package-path",
+        "title": "Package",
+        "type": "path",
+        "description": "The package to build. Defaults to the root workspace directory.",
+        "default": "",
+        "placeholder": "Project Root",
+        "allowFiles": false,
+        "allowFolders": true
+    },
+    {
+        "key": "sdk-path",
+        "title": "Playdate SDK Path",
+        "type": "path",
+        "description": "The path to the Playdate SDK. Defaults to the standard location.",
+        "default": "",
+        "placeholder": "~/Developer/PlaydateSDK",
+        "allowFiles": false,
+        "allowFolders": true
+    },
+    {
+        "key": "target",
+        "title": "Target",
+        "type": "enum",
+        "description": "The target selected for building the project.",
+        "default": "universal",
+        "values": [
+            ["universal", "Universal (Simulator + Device)"],
+            ["simulator", "Simulator only"]
+        ]
+    },
+    {
+        "key": "extraDeviceOs",
+        "title": "Extra Device .o Build Directories",
+        "type": "pathArray",
+        "description": "Additional paths to search for .o files when building for the device.",
+        "allowFiles": false,
+        "allowFolders": true
+    }
+]
