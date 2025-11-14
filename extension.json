@@ -33,7 +33,7 @@
                     "resolve": "pdkr-tasks"
                 },
                 "run": {
-                    "resolve": "pdkr-tasks",
+                    "resolve": "pdkr-tasks"
                 },
                 "clean": {
                     "resolve": "pdkr-tasks"
