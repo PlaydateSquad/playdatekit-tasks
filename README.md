@@ -37,3 +37,17 @@ To run PlaydateKit Tasks's _Build_ action, add either **Build Playdate Package**
 ### Configuration
 
 You can adjust the settings for these tasks in your workspace's settings by opening the Task dropdown and selecting **Edit Task...**.
+
+### Contribute
+
+**PlaydateKit Tasks** accepts pull request contributions from its GitHub repository mirror, which you can find at the link below. Please note that the source of truth is hosted on [SkyVault](https://source.marquiskurt.net/PDUniverse/pdkit-tasks).
+
+[GitHub Repository &rsaquo;](https://github.com/PlaydateSquad/playdatekit-tasks)
+
+If you'd like to report a bug or request a feature, you can do so on the extension's page on YouTrack:
+
+[Send feedback on YouTrack &rsaquo;](https://youtrack.marquiskurt.net/youtrack/newIssue?project=PDKR&c=Stage+To+Do)
+
+### License
+
+**PlaydateKit Tasks** is free and open-source software licensed under the MIT License. For more information on your rights, refer to LICENSE.md.
