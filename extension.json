@@ -6,7 +6,7 @@
     "license": "MIT",
     "repository": "https://source.marquiskurt.net/PDUniverse/pdkit-tasks",
     "bugs": "https://youtrack.marquiskurt.net/youtrack/issues/PDKR",
-    "version": "0.1",
+    "version": "0.1.1",
     "categories": ["tasks"],
     "main": "main.js",
     "activationEvents": ["onWorkspaceContains:extension.json"],
