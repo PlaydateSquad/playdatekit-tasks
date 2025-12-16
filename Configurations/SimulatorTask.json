@@ -45,5 +45,44 @@
         "description": "Additional paths to search for .o files when building for the device.",
         "allowFiles": false,
         "allowFolders": true
+    },
+    {
+        "title": "Debugging",
+        "type": "section",
+        "children": [
+            {
+                "key": "allowDebug",
+                "title": "Debug executable",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "key": "request",
+                "title": "Launch",
+                "type": "enum",
+                "default": "launch",
+                "values": [
+                    ["launch", "Automatically"],
+                    ["attach", "Wait for the executable to be launched"]
+                ]
+            },
+            {
+                "key": "toolchain",
+                "title": "Toolchain",
+                "type": "enum",
+                "default": "swiftly",
+                "values": [
+                    ["swiftly", "Swiftly"],
+                    ["custom", "Custom"]
+                ]
+            },
+            {
+                "key": "toolchain.custom",
+                "title": "Custom Toolchain Path",
+                "type": "string",
+                "description": "The custom path if your toolchain is set to \"Custom\", such as if you have built the toolchain from source."
+            }
+        ]
     }
+
 ]

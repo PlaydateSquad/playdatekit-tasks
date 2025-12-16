@@ -1,3 +1,5 @@
+const LLDB_PORT = 1847;
+
 let taskProvider = null;
 exports.activate = function() {
     taskProvider = new TaskProvider();
@@ -13,9 +15,7 @@ exports.deactivate = function() {
 
 
 class TaskProvider {
-    constructor() {
-        
-    }
+    constructor() {}
     
     resolveTaskAction(context) {
         let action = context.action;
@@ -82,9 +82,52 @@ class TaskProvider {
 
         const sdkPath = nova.path.expanduser(chosenPath);
 
-        return new TaskProcessAction("/usr/bin/open", {
-            args: ["-a", `${sdkPath}/bin/Playdate Simulator.app`, pluginOutPath],
-        });
+        let allowDebugging = config.get("allowDebug", "boolean");
+        if (allowDebugging == undefined || allowDebugging == null) {
+            allowDebugging = false;
+        }
+
+        if (typeof TaskDebugAdapterAction != 'undefined' && allowDebugging) {
+            let action = new TaskDebugAdapterAction("lldb");
+
+            const swiftlyToolchain = nova.path.expanduser("~/.swiftly")
+            let toolchain = "";
+            let toolchainType = config.get("toolchain", "string");
+            if (toolchainType == undefined || toolchainType == null || toolchainType == "swiftly") {
+                toolchain = swiftlyToolchain;
+            } else {
+                const customToolchain = config.get("toolchain.custom", "string");
+                if (customToolchain == null || customToolchain == undefined) {
+                    toolchain = swiftlyToolchain;
+                } else {
+                    toolchain = `${customToolchain}/usr`;
+                }
+            }
+
+            action.command = `${toolchain}/bin/lldb-dap`;
+            action.args = ["--port", LLDB_PORT.toString()];
+            action.transport = "socket";
+            action.socketPort = LLDB_PORT;
+
+            let request = config.get("request", "string");
+            if (request == undefined || request == null) {
+                request = "launch";
+            }
+
+            action.debugRequest = request;
+            action.debugArgs = {
+                program: `${sdkPath}/bin/Playdate Simulator.app`,
+                host: "localhost",
+                port: LLDB_PORT,
+                args: [pluginOutPath],
+                cwd: nova.path.normalize(packagePath || nova.workspace.path)
+            };
+            return action;
+        } else {
+            return new TaskProcessAction("/usr/bin/open", {
+                args: ["-a", `${sdkPath}/bin/Playdate Simulator.app`, pluginOutPath],
+            });
+        }
     }
 
     resolveCleanAction(config) {

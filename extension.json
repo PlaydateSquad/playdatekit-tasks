@@ -6,10 +6,21 @@
     "license": "MIT",
     "repository": "https://source.marquiskurt.net/PDUniverse/pdkit-tasks",
     "bugs": "https://youtrack.marquiskurt.net/youtrack/issues/PDKR",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "categories": ["tasks"],
     "main": "main.js",
     "activationEvents": ["onWorkspaceContains:extension.json"],
+    "debugAdapters": {
+        "lldb": {
+            "name": "LLDB",
+            "image": "logo"
+        }
+    },
+    "breakpoints": [
+        {
+            "syntax": "swift"
+        }
+    ],
     "taskTemplates": {
         "pdcBuild": {
             "name": "Build PlaydateKit Package",
@@ -41,7 +52,7 @@
             },
             "buildBeforeRunning": true,
             "config": "Configurations/SimulatorTask.json",
-            "description": "Run a PlaydateKit based game in the Playdate Simulator."
+            "description": "Run and debug a PlaydateKit based game in the Playdate Simulator."
         }
     }
 }

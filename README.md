@@ -19,7 +19,7 @@ PlaydateKit Tasks provides tasks for:
 PlaydateKit Tasks requires some additional tools to be installed on your Mac:
 
 - [Playdate SDK](https://play.date/dev)  
-- Swift toolchain v6.2 or later
+- Swift toolchain v6.2 or later (Swiftly is recommended)
 
 You might also want to install these extensions, although they are not required for PlaydateKit Tasks to function:
 
@@ -33,6 +33,13 @@ To run PlaydateKit Tasks's _Build_ action, add either **Build Playdate Package**
 - Select the **Project → Build** menu item;
 - Press **Command-B**; or
 - Open the command palette and type `build`
+
+### Debugging
+
+The **Playdate Simulator (PlaydateKit)** task also supports debugging capabilities via LLDB and your toolchain's `lldb-dap` executable. Debugging is enabled by default and should trigger when you set a breakpoint. You can adjust the settings for debugging in your workspace's settings by opening the Task dropdown and selecting **Edit Task...**, then scrolling to the **Debugging** section of the task.
+
+> **⚠️ Important**  
+> Debugging support is currently experimental and may require changes to PlaydateKit and/or your project. Refer to [PlaydateKit#152](https://github.com/finnvoor/PlaydateKit/pull/152) for the patch details.
 
 ### Configuration
 
